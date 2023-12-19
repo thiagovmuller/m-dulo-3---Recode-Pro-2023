@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../styles.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<title>TVM | Passagens</title>
+</head>
+
+<body>
+	<main>
+
+		<div class="container">
+			<div class="topnav responsive nav-container" id="myTopnav">
+			<a class="img"><img id="logo" src="../img/logo.png" alt="agenciadeviagens" /></a>
+			<a href="../index.html">Home</a>
+			<a href="../destino.html">Destinos</a>
+			<a href="../promocoes.html">Promoções</a>
+			<a href="../contato.html">Contato</a>
+			<a href="../clientes/index.html" >Clientes</a>
+			<a href="../compras/index.html">Compras</a>
+			<a href="../passagens/index.html" class="active">Passagens</a>
+
+		</div>
+
+		<section class="container">
+
+			<div class="p-4">
+				<div class="p-4">
+					<a href="cadastrar.html" class="btn btn-primary mb-2 botao1"> Nova Passagem </a>
+					<table class="table table-responsive table-hover">
+						<thead class="table-dark">
+							<tr>
+								<th scope="col">idPassagem</th>
+								<th scope="col">CiaAerea</th>
+								<th scope="col">Origem</th>
+								<th scope="col">Destino</th>
+								<th scope="col">Valor</th>
+								<th scope="col">Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr th:each="passagem : ${passagens}">
+
+								<td th:text="${passagem.idPassagem}"></td>
+								<td th:text="${passagem.ciaAerea}"></td>
+								<td th:text="${passagem.origem}"></td>
+								<td th:text="${passagem.destino}"></td>
+								<td th:text="${passagem.valor}"></td>
+
+								<td>
+
+										
+									<a href="atualizar.html"
+										class="btn btn-secondary btn-edit mb-1">Editar</a>
+
+									<a href="" class="btn btn-danger btn-edit mb-1" onclick="return confirm('Tem certeza que deseja excluir a passagem?');">Excluir</a>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+		</section>
+	</main>
+
+	<footer class="bg-dark text-white text-center py-3">
+		<b>&copy; 2023 - TVM Agência de Viagens</b>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

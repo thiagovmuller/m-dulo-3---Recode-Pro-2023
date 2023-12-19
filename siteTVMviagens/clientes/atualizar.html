@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../styles.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+	<title>TVM | Atualizar Cliente</title>
+</head>
+
+<body>
+	<main>
+
+			<div class="container">
+				<div class="topnav responsive nav-container" id="myTopnav">
+				<a class="img"><img id="logo" src="../img/logo.png" alt="agenciadeviagens" /></a>
+				<a href="../index.html">Home</a>
+				<a href="../destino.html">Destinos</a>
+				<a href="../promocoes.html">Promoções</a>
+				<a href="../contato.html">Contato</a>
+				<a href="../clientes/index.html" class="active">Clientes</a>
+				<a href="../compras/index.html">Compras</a>
+				<a href="../passagens/index.html">Passagens</a>
+
+			</div>
+
+			<div class="container py-3">
+				<form method="post" th:object="${cliente}">
+					<input type="hidden" th:field="*{idCliente}">
+
+					<div class="form-group mb-3">
+						<label for="nome" class="form-label"> Nome </label>
+						<input type="text" class="form-control" id="nome" th:field="*{nome}" required>
+					</div>
+
+					<div class="form-group mb-3">
+						<label for="nome" class="form-label"> CPF </label>
+						<input type="text" class="form-control" id="cpf" th:field="*{cpf}" required>
+					</div>
+
+					<div class="form-group mb-3">
+						<label for="nome" class="form-label"> Data Nascimento </label>
+						<input type="text" class="form-control" id="dataNasc" th:field="*{dataNasc}" required>
+					</div>
+
+					<div class="form-group mb-3">
+						<label for="nome" class="form-label"> Telefone </label>
+						<input type="text" class="form-control" id="telefone" th:field="*{telefone}" required>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Enviar</button>
+					<a href="/clientes" class="btn btn-danger" style="margin-left: 10px"> Cancelar </a>
+				</form>
+			</div>
+
+	</main>
+
+	<footer class="bg-dark text-white text-center py-3">
+		<b>&copy; 2023 - TVM Agência de Viagens</b>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>

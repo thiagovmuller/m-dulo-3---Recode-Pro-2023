@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agência de Viagens</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+ 
+  <div class="container">
+    <div class="topnav responsive nav-container" id="myTopnav">
+    <a class="img"><img id="logo" src="../img/logo.png" alt="agenciadeviagens" /></a>
+    <a href="index.html" >Home</a>
+    <a href="destino.html" >Destinos</a>
+    <a href="promocoes.html">Promoções</a>
+    <a href="contato.html" class="active">Contato</a>
+    <a href="clientes/index.html" >Clientes</a>
+    <a href="compras/index.html">Compras</a>
+    <a href="passagens/index.html" >Passagens</a>
+
+  </div>
+
+    <section class="containercontato">
+      <h2>Entre em Contato</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Tem alguma dúvida ou precisa de mais informações? Entre em contato
+            conosco!</p>
+          <ul>
+            <li>(48) 3246-0001</li>
+            <li>contato@tvmviagens.com</li>
+            <li>Av. Atlântica, 200 - Jardim Atlântico - Florianópolis - SC.</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" id="nome" name="nome" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem:</label>
+              <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+    <footer class="bg-dark text-white text-center py-3">
+      <b>&copy; 2023 - TVM Agência de Viagens</b>
+    </footer>
+
+</html>

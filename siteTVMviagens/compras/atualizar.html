@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../css/styles.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+	<title>TVM | Atualizar Compra</title>
+</head>
+
+<body>
+	<main>
+
+		<div class="container">
+			<div class="topnav responsive nav-container" id="myTopnav">
+			  <a class="img"><img id="logo" src="../img/logo.png" alt="agenciadeviagens" /></a>
+			  <a href="../index.html">Home</a>
+			  <a href="../destino.html">Destinos</a>
+			  <a href="../promocoes.html">Promoções</a>
+			  <a href="../contato.html">Contato</a>
+			  <a href="../clientes/index.html">Clientes</a>
+			  <a href="../compras/index.html" class="active">Compras</a>
+			  <a href="../passagens/index.html">Passagens</a>
+
+		</div>
+
+		<div class="container py-3">
+			<form method="post" th:object="${compra}">
+				<input type="hidden" th:field="*{idCompra}">
+
+				<div class="form-group mb-3">
+					<label for="idCliente" class="form-label"> Cliente </label>
+					<select th:field="*{cliente}" class="form-control">
+						<option th:each="cliente : ${clientes}" th:text="${cliente.nome}"
+							th:value="${cliente.idCliente}">
+						</option>
+					</select>
+				</div>
+
+				<div class="form-group mb-3">
+					<label for="idPassagem" class="form-label"> Passagem </label>
+					<select th:field="*{passagem}" class="form-control">
+						<option th:each="passagem : ${passagens}"
+							th:text="${passagem.origem + ' para ' + passagem.destino}" +
+							th:value="${passagem.idPassagem}">
+						</option>
+					</select>
+				</div>
+
+				<div class="form-group mb-3">
+					<label for="formaPgto" class="form-label"> formaPgto </label>
+					<input type="text" class="form-control" id="formaPgto" th:field="*{formaPgto}" required>
+				</div>
+
+				<div class="form-group mb-3">
+					<label for="valorTotal" class="form-label"> valorTotal </label>
+					<input type="number" class="form-control" id="valorTotal" th:field="*{valorTotal}" required>
+				</div>
+
+
+				<button type="submit" class="btn btn-primary">
+					Enviar
+				</button>
+				<a href="index.html" class="btn btn-danger" style="margin-left: 10px"> Cancelar </a>
+			</form>
+		</div>
+
+	</main>
+
+	<footer class="bg-dark text-white text-center py-3">
+		<b>&copy; 2023 - TVM Agência de Viagens</b>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
